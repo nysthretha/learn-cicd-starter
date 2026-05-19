@@ -13,6 +13,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
       - name: Go test
         run: go test -cover ./...
 
@@ -23,6 +28,11 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
 
       - name: Format the code
         run: test -z $(go fmt ./...)
